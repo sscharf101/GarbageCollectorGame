@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Collector - Save the Planet!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Arial', sans-serif;
+        }
+
+        #gameContainer {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+
+        #gameCanvas {
+            border: 3px solid #333;
+            border-radius: 10px;
+            background: linear-gradient(180deg, #dcefff 0%, #e8f4ff 100%);
+            display: block;
+            margin: 15px auto;
+        }
+
+        .instructions {
+            color: #666;
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+
+        .controls {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .controls p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 15px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .legend-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .recyclable {
+            background: #00c800;
+            color: white;
+        }
+
+        .trash {
+            background: #ff3232;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="gameContainer">
+        <h1>🌍 Eco Collector ♻️</h1>
+        <p class="instructions">Collect recyclables and avoid trash to save the planet!</p>
+
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-icon recyclable">♻</div>
+                <span>Recyclable (+10 pts)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-icon trash">✕</div>
+                <span>Trash (-5 pts)</span>
+            </div>
+        </div>
+
+        <div class="controls">
+            <p><strong>Controls:</strong> Use Arrow Keys (← →) or A/D to move</p>
+            <p><strong>Goal:</strong> Don't miss 10 recyclables or it's game over!</p>
+            <p><strong>Tip:</strong> Game speeds up as you score more points</p>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
